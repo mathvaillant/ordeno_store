@@ -5,7 +5,7 @@ function App() {
   return (
     <>
       <Header />
-      <h1>Ordenô Vinhos</h1>
+      <h1>Ordenô</h1>
     </>
   )
 }
