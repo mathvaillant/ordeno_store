@@ -1,8 +1,9 @@
 import './App.scss'
 import Header from './components/Header/Header'
+import Footer from './components/Footer/Footer'
+import HomeScreen from './screens/HomeScreen'
 
 import { Container } from 'react-bootstrap'
-import Footer from './components/Footer/Footer'
 
 function App() {
   return (
@@ -10,7 +11,8 @@ function App() {
       <Header />
       <main>
         <Container>
-          <h1>Ordenô</h1>
+          <h1 className='latest'>LATEST PRODUCTS</h1>
+          <HomeScreen />
         </Container>
       </main>
       <Footer />
