@@ -16,6 +16,9 @@
     .product__body__a {
       color: $ThirdColor;
       font-weight: 400;
+      &:hover {
+        color: $White;
+      }
     }
     .product__body__rating {
     }

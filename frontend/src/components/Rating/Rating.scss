@@ -1,0 +1,15 @@
+/* Variables */
+@import '../../styles/variables';
+
+.rating {
+  span {
+    color: $Star;
+    i {
+      margin: 0 1px;
+    }
+  }
+  .rating__text {
+    font-size: 12px;
+    font-style: italic;
+  }
+}
