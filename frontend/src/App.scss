@@ -5,7 +5,24 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background-color: $Black;
+}
+
+body {
+  background-image: url('./images/wood.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.app__container {
+  border-radius: 10px;
+  background: $Black;
+  box-shadow: 8px 8px 50px 10px black;
+  padding: 2rem;
+  h1 {
+    border-bottom: solid 1px $ThirdColor;
+    border-width: thin;
+  }
 }
 
 .latest {

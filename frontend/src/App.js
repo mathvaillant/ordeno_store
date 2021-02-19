@@ -12,7 +12,7 @@ function App() {
     <Router>
       <Header />
       <main>
-        <Container>
+        <Container className='app__container'>
           <h1 className='latest'>LATEST PRODUCTS</h1>
           <Route exact path='/' component={HomeScreen} />
           <Route exact path='/product/:id' component={ProductScreen} />

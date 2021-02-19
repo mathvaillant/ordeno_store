@@ -9,8 +9,8 @@ function Header() {
   return (
     <header className='header'>
       <Navbar variant='dark' collapseOnSelect className='p-1'>
-        <Container>
-          <LinkContainer to='/' style={{ width: '70px' }}>
+        <Container className='header__container'>
+          <LinkContainer className='header__container__logo' to='/'>
             <Navbar.Brand>
               <Image src={Logo} alt='' fluid />
             </Navbar.Brand>
