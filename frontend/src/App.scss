@@ -1,10 +1,11 @@
 /* Variables */
-@import './styles/variables';
+@import './styles/styles';
 
 html,
 body {
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -17,12 +18,8 @@ body {
 .app__container {
   border-radius: 10px;
   background: $Black;
-  box-shadow: 8px 8px 50px 10px black;
+  box-shadow: $DarkShadow;
   padding: 2rem;
-  h1 {
-    border-bottom: solid 1px $ThirdColor;
-    border-width: thin;
-  }
 }
 
 .latest {

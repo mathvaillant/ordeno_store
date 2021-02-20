@@ -1,0 +1,26 @@
+/* Variables */
+@import '../styles/styles.scss';
+
+.btn {
+  @extend .btn;
+}
+
+.altWhite {
+  color: $AltWhite !important;
+}
+
+.listgroup__item {
+  background: transparent !important;
+}
+
+.listgroup {
+  .listgroup__item {
+    h3,
+    p {
+      color: $ThirdColor;
+    }
+    h5 {
+      color: $AltWhite;
+    }
+  }
+}

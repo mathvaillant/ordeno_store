@@ -1,5 +1,12 @@
 /* Variables */
-@import '../../styles/variables';
+@import '../../styles/styles';
+
+.navbar__menu__links {
+  color: $AltWhite !important;
+  &:hover {
+    text-decoration: underline;
+  }
+}
 
 .header {
   background-color: transparent;
@@ -7,6 +14,9 @@
     display: flex;
     .header__container__logo {
       width: 70px;
+      .header__container__logo__img {
+        border-radius: 50%;
+      }
     }
   }
 }

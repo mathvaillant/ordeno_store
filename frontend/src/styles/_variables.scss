@@ -1,13 +1,24 @@
 /* COLORS */
 $Black: rgb(5, 5, 5);
 $White: rgb(238, 238, 238);
+$AltWhite: antiquewhite;
 $PrimaryColor: #ffe5b6;
 $SecondaryColor: #443c3b;
 $ThirdColor: #82735f;
 $FourthColor: #16161594;
-
-/* STARS */
-$Star: #eee8aa;
+$Red: #dc362d;
+$Green: #05ac72;
 
 /* BOX SHADOWS */
-/* $darkShadow: ; */
+$DarkShadow: 8px 8px 50px 10px black;
+
+/* STOCK */
+.inStock {
+  background-color: $Green;
+  color: $Black;
+}
+
+.outOfStock {
+  background-color: $Red;
+  color: $White;
+}

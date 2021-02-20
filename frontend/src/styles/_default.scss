@@ -1,0 +1,26 @@
+/* RATING */
+.rating {
+  span {
+    color: $AltWhite;
+    i {
+      margin: 0 1px;
+    }
+  }
+  .rating__text {
+    font-size: 12px;
+    font-style: italic;
+  }
+}
+
+/* BTN */
+.btn {
+  background-color: transparent;
+  border-left: dashed $ThirdColor 1px;
+  border-right: dashed $ThirdColor 1px;
+  padding: 0.1rem 1rem;
+  color: $ThirdColor;
+  &:hover {
+    color: $White;
+    text-decoration: underline;
+  }
+}
