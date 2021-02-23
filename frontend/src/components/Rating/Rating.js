@@ -68,7 +68,7 @@ function Rating({ value, text }) {
 
 /* PropTypes will typecheck the props */
 Rating.propTypes = {
-  value: PropTypes.number.isRequired,
+  value: PropTypes.number,
   text: PropTypes.string.isRequired,
 }
 

@@ -3,8 +3,12 @@ import axios from 'axios'
 import { Row, Col } from 'react-bootstrap'
 import Product from '../components/Product/Product'
 
+import PropTypes from 'prop-types'
+
 function HomeScreen() {
   const [products, setProducts] = useState([])
+
+  console.log(products)
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -36,6 +40,10 @@ function HomeScreen() {
       </Row>
     </div>
   )
+}
+
+HomeScreen.propType = {
+  products: PropTypes.arrayOf(PropTypes.string.isRequired),
 }
 
 export default HomeScreen

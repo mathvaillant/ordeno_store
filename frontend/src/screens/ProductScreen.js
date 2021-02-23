@@ -5,8 +5,12 @@ import { Row, Col, Image, ListGroup, Card, Button } from 'react-bootstrap'
 import Rating from '../components/Rating/Rating'
 import './ProductScreen.scss'
 
+import PropTypes from 'prop-types'
+
 function ProductScreen({ match }) {
   const [product, setProduct] = useState({})
+
+  console.log(match)
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -81,6 +85,15 @@ function ProductScreen({ match }) {
       </Row>
     </>
   )
+}
+
+ProductScreen.propTypes = {
+  match: PropTypes.shape({
+    isExact: PropTypes.bool.isRequired,
+    params: PropTypes.object.isRequired,
+    path: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired,
+  }),
 }
 
 export default ProductScreen
