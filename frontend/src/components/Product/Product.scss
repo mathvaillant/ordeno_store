@@ -8,9 +8,9 @@
     transform: scale(1.01);
   }
   .product__body {
-    border-bottom: 1px dashed $ThirdColor;
+    border-bottom: 1px solid $ThirdColor;
     border-width: thin;
-    background-color: $FourthColor;
+    background-color: $Black;
     .product__body__a {
       color: $ThirdColor;
       font-weight: 400;

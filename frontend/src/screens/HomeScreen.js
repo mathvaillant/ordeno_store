@@ -25,7 +25,7 @@ function HomeScreen() {
     <div>
       <h3
         style={{
-          borderBottom: 'dashed 1px',
+          borderBottom: 'solid 1px',
           borderWidth: 'thin',
         }}
         className='latest'>
