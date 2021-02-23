@@ -1,8 +1,13 @@
-import express from 'express'
+// use .js at the end of the file when dealing with backend | ES6 modules
 import dotenv from 'dotenv'
+import express from 'express'
+import connectDB from './config/db.js'
 import products from './data/products.js'
 
+// dotenv.donfig() comes first!!!
 dotenv.config()
+
+connectDB()
 const app = express()
 
 // a GET request -> takes a (request, response)
