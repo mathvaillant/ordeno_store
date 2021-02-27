@@ -1,6 +1,10 @@
 /* Variables */
 @import './styles/styles';
 
+main {
+  min-height: 80vh;
+}
+
 html,
 body {
   margin: 0;

@@ -10,8 +10,6 @@ import PropTypes from 'prop-types'
 function ProductScreen({ match }) {
   const [product, setProduct] = useState({})
 
-  console.log(match)
-
   useEffect(() => {
     const fetchProduct = async () => {
       const response = await axios.get(`/api/products/${match.params.id}`)
