@@ -2,7 +2,7 @@
 import dotenv from 'dotenv'
 import express from 'express'
 import connectDB from './config/db.js'
-import products from './data/products.js'
+import productRouter from './routes/productRoutes.js'
 // totaly optional
 import colors from 'colors'
 
@@ -12,23 +12,12 @@ dotenv.config()
 connectDB()
 const app = express()
 
-// a GET request -> takes a (request, response)
-// then response.send() sends the data to the client
-// then response.json() sends the JSON API data to the client
 app.get('/', (req, res) => {
   res.send('API is running right now...')
 })
 
-// GET request to ALL products
-app.get('/api/products', (req, res) => {
-  res.json(products)
-})
-
-// GET request to ONE single product
-app.get('/api/products/:id', (req, res) => {
-  const product = products.find((product) => product._id === req.params.id)
-  res.json(product)
-})
+// everything that goes to /api/products is linked to productRouter
+app.use('/api/products', productRouter)
 
 const PORT = process.env.PORT || 5000
 
