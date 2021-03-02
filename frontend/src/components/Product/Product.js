@@ -13,7 +13,12 @@ function Product({ product }) {
     <Card className='my-3 mp-3 rounded product'>
       {/* Each product item has it's own url */}
       <Link to={`/product/${_id}`}>
-        <Card.Img className='product__img' src={image} variant='top' />
+        <Card.Img
+          className='product__img'
+          src={image}
+          variant='top'
+          alt={name}
+        />
       </Link>
 
       <Card.Body className='product__body'>

@@ -1,6 +1,8 @@
 import express from 'express'
 const router = express.Router()
 import Product from '../models/productModel.js'
+// asynchandler let's us detect error in the catch
+import asyncHandler from 'express-async-handler'
 
 // a GET request -> takes a (request, response)
 // then response.send() sends the data to the client
@@ -12,28 +14,30 @@ import Product from '../models/productModel.js'
 // @desc    Fetch all products
 // @route   GET /api/products
 // @access  Public
-router.get('/', async (req, res) => {
-  try {
+router.get(
+  '/',
+  asyncHandler(async (req, res) => {
     const products = await Product.find({})
 
     res.json(products)
-  } catch (error) {
-    console.error(`${error}`.red.inverse)
-  }
-})
+  })
+)
 
 // @desc    Fetch single product
 // @route   GET /api/products/:id
 // @access  Public
-router.get('/:id', async (req, res) => {
-  try {
+router.get(
+  '/:id',
+  asyncHandler(async (req, res) => {
     const product = await Product.findById(req.params.id)
 
-    res.json(product)
-  } catch (error) {
-    console.error(`${error}`.red.inverse)
-    res.status(404).json({ message: `product id ${req.params.id} not found` })
-  }
-})
+    if (product) {
+      res.json(product)
+    } else {
+      res.status(404)
+      throw new Error('Product not found')
+    }
+  })
+)
 
 export default router
