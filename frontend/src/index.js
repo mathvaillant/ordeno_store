@@ -1,13 +1,17 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './styles/bootstrap.min.css'
-import App from './App'
+import { Provider } from 'react-redux'
+import store from './store.js'
+import App from './App.js'
 import reportWebVitals from './reportWebVitals'
 
 ReactDOM.render(
-  <React.StrictMode>
+  // Redux pass down to my app the store
+  // index.js is the best place to put the Provider
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 )
 
