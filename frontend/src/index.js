@@ -7,8 +7,7 @@ import App from './App.js'
 import reportWebVitals from './reportWebVitals'
 
 ReactDOM.render(
-  // Redux pass down to my app the store
-  // index.js is the best place to put the Provider
+  // Provider pass data down to the children components
   <Provider store={store}>
     <App />
   </Provider>,
