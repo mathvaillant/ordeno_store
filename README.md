@@ -1,2 +1,2 @@
-# ordeno_store - 
+# ordeno_store 
 ## Online E-commerce store 
