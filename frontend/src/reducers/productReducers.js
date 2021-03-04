@@ -3,6 +3,9 @@
  and might also contain a payload(data) */
 
 import {
+  PRODUCT_DETAILS_FAIL,
+  PRODUCT_DETAILS_REQUEST,
+  PRODUCT_DETAILS_SUCCESS,
   PRODUCT_LIST_FAIL,
   PRODUCT_LIST_REQUEST,
   PRODUCT_LIST_SUCCESS,
@@ -18,7 +21,7 @@ export const productListReducer = (state = { products: [] }, action) => {
   // #3 if it fails
   switch (action.type) {
     case PRODUCT_LIST_REQUEST:
-      return { loading: true, products: [] }
+      return { loading: true, ...state }
     case PRODUCT_LIST_SUCCESS:
       return { loading: false, products: action.payload }
     case PRODUCT_LIST_FAIL:
@@ -27,3 +30,24 @@ export const productListReducer = (state = { products: [] }, action) => {
       return state
   }
 }
+
+export const productDetailsReducer = (
+  // Specify inside the product object the reviews as an array
+  state = { product: { reviews: [] } },
+  action
+) => {
+  switch (action.type) {
+    case PRODUCT_DETAILS_REQUEST:
+      return { loading: true, ...state }
+    case PRODUCT_DETAILS_SUCCESS:
+      return { loading: false, product: action.payload }
+    case PRODUCT_DETAILS_FAIL:
+      return { loading: false, error: action.payload }
+    default:
+      return state
+  }
+}
+
+/* Then...
+      ... add reducers to the redux store
+*/

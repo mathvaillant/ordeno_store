@@ -2,15 +2,20 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Row, Col } from 'react-bootstrap'
 import Product from '../components/Product/Product'
-import { listProducts } from '../actions/productActions.js'
+import Loader from '../components/Loader'
+import Message from '../components/Message/Message'
+import { listProducts } from '../actions/productActions'
 
 import PropTypes from 'prop-types'
 
 function HomeScreen() {
   const dispatch = useDispatch()
 
+  // useSelector access the redux store's state
   const productList = useSelector((state) => state.productList)
   const { loading, error, products } = productList
+
+  console.log('Loading:', loading, 'error:', error, 'products:', products)
 
   useEffect(() => {
     dispatch(listProducts())
@@ -29,10 +34,10 @@ function HomeScreen() {
       </h3>
 
       {loading ? (
-        <small>Encontrando produtos...</small>
+        <Loader />
       ) : error ? (
-        <h2>{error}</h2>
-      ) : (
+        <Message variant='danger'>{error}</Message>
+      ) : products ? (
         <Row title='HomeScreenRow'>
           {products.map((product) => (
             <Col sm={12} md={6} lg={4} xl={3} key={product._id}>
@@ -40,13 +45,15 @@ function HomeScreen() {
             </Col>
           ))}
         </Row>
+      ) : (
+        ''
       )}
     </div>
   )
 }
 
 HomeScreen.propType = {
-  products: PropTypes.arrayOf(PropTypes.string.isRequired),
+  products: PropTypes.arrayOf(PropTypes.string),
 }
 
 export default HomeScreen

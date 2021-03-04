@@ -1,12 +1,11 @@
 // use .js at the end of the file when dealing with backend | ES6 modules
 import dotenv from 'dotenv'
 import express from 'express'
-import connectDB from './config/db.js'
-import productRouter from './routes/productRoutes.js'
-import compression from 'compression'
 import { notFound, errorHandler } from './middleware/errorMiddleware.js'
-// totaly optional
+import connectDB from './config/db.js'
 import colors from 'colors'
+
+import productRoutes from './routes/productRoutes.js'
 
 // dotenv.donfig() comes first!!!
 dotenv.config()
@@ -19,14 +18,12 @@ app.get('/', (req, res) => {
 })
 
 // everything that goes to /api/products is linked to productRouter
-app.use('/api/products', productRouter)
+app.use('/api/products', productRoutes)
 
 // if users try to access anything that isn't a route, send a 404 NOT FOUND status
 // override the default error handler using err first: (err, req, res, next)
 app.use(notFound)
 app.use(errorHandler)
-
-app.use(compression())
 
 const PORT = process.env.PORT || 5000
 

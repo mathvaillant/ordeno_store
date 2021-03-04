@@ -1,8 +1,8 @@
 import express from 'express'
+import asyncHandler from 'express-async-handler'
 const router = express.Router()
 import Product from '../models/productModel.js'
 // asynchandler let's us detect error in the catch
-import asyncHandler from 'express-async-handler'
 
 // a GET request -> takes a (request, response)
 // then response.send() sends the data to the client
@@ -18,6 +18,8 @@ router.get(
   '/',
   asyncHandler(async (req, res) => {
     const products = await Product.find({})
+
+    /* throw new Error('Some error') */
 
     res.json(products)
   })
