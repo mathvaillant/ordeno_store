@@ -7,7 +7,7 @@ import {
   PRODUCT_DETAILS_REQUEST,
   PRODUCT_DETAILS_SUCCESS,
   PRODUCT_DETAILS_FAIL,
-} from '../constants/productConstants'
+} from '../types/productTypes'
 
 // Fetch all products here instead of fetching in the HomeScreen component
 export const listProducts = () => async (dispatch) => {

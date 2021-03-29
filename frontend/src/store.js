@@ -2,8 +2,8 @@
 
 import { createStore, combineReducers, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
+// This is for the redux-dev-tools
 import { composeWithDevTools } from 'redux-devtools-extension'
-
 import {
   productListReducer,
   productDetailsReducer,

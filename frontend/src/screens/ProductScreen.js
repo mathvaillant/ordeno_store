@@ -15,7 +15,7 @@ function ProductScreen({ match }) {
 
   // useSelector access the redux store's state
   const productDetailsList = useSelector((state) => state.productDetails)
-  const { loading, error, product } = productDetailsList
+  const { loading, product, error } = productDetailsList
 
   useEffect(() => {
     dispatch(productDetails(match.params.id))
