@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Row, Col, Image, ListGroup, Card, Button } from 'react-bootstrap'
+import { Row, Col, Image, ListGroup, Card, Button, Form } from 'react-bootstrap'
 import Loader from '../components/Loader'
 import Message from '../components/Message/Message'
 import Rating from '../components/Rating/Rating'
@@ -10,7 +10,9 @@ import { productDetails } from '../actions/productActions'
 
 import PropTypes from 'prop-types'
 
-function ProductScreen({ match }) {
+function ProductScreen({ history, match }) {
+  const [amount, setAmount] = useState(0)
+
   const dispatch = useDispatch()
 
   // useSelector access the redux store's state
@@ -20,6 +22,11 @@ function ProductScreen({ match }) {
   useEffect(() => {
     dispatch(productDetails(match.params.id))
   }, [match])
+
+  const addToCartHandler = () => {
+    // History redirects the page
+    history.push(`/cart/${match.params.id}?amount=${amount}`)
+  }
 
   return (
     <>
@@ -74,8 +81,30 @@ function ProductScreen({ match }) {
                     </Col>
                   </Row>
                 </ListGroup.Item>
+
+                {product.countInStock > 0 && (
+                  <ListGroup.Item>
+                    <Row>
+                      <Col>Amount</Col>
+                      <Col>
+                        <Form.Control
+                          as='select'
+                          value={amount}
+                          onChange={(e) => setAmount(e.target.value)}>
+                          {[...Array(product.countInStock).keys()].map((x) => (
+                            <option key={x + 1} value={x + 1}>
+                              {x + 1}
+                            </option>
+                          ))}
+                        </Form.Control>
+                      </Col>
+                    </Row>
+                  </ListGroup.Item>
+                )}
+
                 <ListGroup.Item className='listgroup__item'>
                   <Button
+                    onClick={addToCartHandler}
                     className='btn-block'
                     type='button'
                     disabled={product.countInStock === 0}>
