@@ -11,7 +11,7 @@ import { productDetails } from '../actions/productActions'
 import PropTypes from 'prop-types'
 
 function ProductScreen({ history, match }) {
-  const [amount, setAmount] = useState(0)
+  const [amount, setAmount] = useState(1)
 
   const dispatch = useDispatch()
 
