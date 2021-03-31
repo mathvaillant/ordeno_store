@@ -11,6 +11,9 @@
 
 .listgroup__item {
   background: transparent !important;
+  .listgroup__item__select {
+    background-color: $Black;
+  }
 }
 
 .listgroup {

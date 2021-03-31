@@ -83,16 +83,20 @@ function ProductScreen({ history, match }) {
                 </ListGroup.Item>
 
                 {product.countInStock > 0 && (
-                  <ListGroup.Item>
-                    <Row>
-                      <Col>Amount</Col>
+                  <ListGroup.Item className='listgroup__item'>
+                    <Row style={{ display: 'flex', alignItems: 'center' }}>
+                      <Col className='altWhite'>Amount: </Col>
                       <Col>
                         <Form.Control
+                          className='listgroup__item__select'
                           as='select'
                           value={amount}
                           onChange={(e) => setAmount(e.target.value)}>
                           {[...Array(product.countInStock).keys()].map((x) => (
-                            <option key={x + 1} value={x + 1}>
+                            <option
+                              style={{ color: 'white' }}
+                              key={x + 1}
+                              value={x + 1}>
                               {x + 1}
                             </option>
                           ))}
