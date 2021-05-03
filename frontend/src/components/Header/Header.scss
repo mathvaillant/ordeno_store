@@ -9,11 +9,21 @@
 }
 
 .header {
-  background-color: transparent;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: $Black;
+  max-height: 55px;
   .header__container {
     display: flex;
+    align-items: flex-start;
+    margin-top: 4px;
     .header__container__logo {
-      width: 70px;
+      background-color: $Black;
+      padding: 0 !important;
+      border: 7px solid $Black;
+      border-radius: 50%;
+      width: 90px;
       position: relative;
       left: 50%;
       transform: translate(-50%);

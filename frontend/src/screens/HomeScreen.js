@@ -19,16 +19,10 @@ function HomeScreen() {
   }, [dispatch])
 
   return (
-    <div title='HomeScreen'>
-      <h3
-        title='h3'
-        style={{
-          borderBottom: 'solid 1px',
-          borderWidth: 'thin',
-        }}
-        className='latest'>
+    <div title='HomeScreen '>
+      <h5 title='h3' className='latest'>
         Últimas Novidades Ordenô
-      </h3>
+      </h5>
 
       {loading ? (
         <Loader />

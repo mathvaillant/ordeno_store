@@ -3,31 +3,29 @@
 
 main {
   min-height: 80vh;
+  max-width: 90%;
+  margin: 5rem auto;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: $DarkShadow;
 }
 
 html,
 body {
+  background: $White;
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
 }
 
-body {
-  background-image: url('./images/wood.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
 .app__container {
-  border-radius: 10px;
-  background: $Black;
-  box-shadow: $DarkShadow;
-  padding: 2rem;
+  background: transparent;
+  margin: 2rem;
+  width: auto;
 }
 
 .latest {
   color: $ThirdColor;
-  padding: 2.5rem 1rem 1rem 0rem;
+  padding: 1rem 1rem 1rem 0rem;
   font-weight: 300;
 }
