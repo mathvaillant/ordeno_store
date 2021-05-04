@@ -10,10 +10,10 @@
   .product__body {
     border-bottom: 1px solid $ThirdColor;
     border-width: thin;
-    background-color: $Black;
+    background-color: $White;
     .product__body__a {
-      color: $ThirdColor;
-      font-weight: 400;
+      color: $Black;
+      font-weight: 600;
       &:hover {
         color: $White;
       }
@@ -21,7 +21,7 @@
     .product__body__rating {
     }
     .product__body__price {
-      color: $ThirdColor;
+      color: $Black;
     }
   }
 }

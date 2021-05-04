@@ -13,17 +13,21 @@
   background: transparent !important;
   .listgroup__item__select {
     background-color: $Black;
+    color: white;
   }
 }
 
 .listgroup {
   .listgroup__item {
+    h3 {
+      font-size: 16px;
+    }
     h3,
     p {
-      color: $ThirdColor;
+      color: $Black;
     }
     h5 {
-      color: $AltWhite;
+      color: $Black;
     }
   }
 }

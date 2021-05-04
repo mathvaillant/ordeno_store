@@ -2,7 +2,7 @@
 @import '../../styles/styles';
 
 .navbar__menu__links {
-  color: $AltWhite !important;
+  color: $White !important;
   &:hover {
     text-decoration: underline;
   }
@@ -17,6 +17,7 @@
   .header__container {
     display: flex;
     align-items: flex-start;
+    justify-content: flex-end;
     margin-top: 4px;
     .header__container__logo {
       background-color: $Black;

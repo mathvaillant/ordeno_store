@@ -20,9 +20,7 @@ function HomeScreen() {
 
   return (
     <div title='HomeScreen '>
-      <h5 title='h3' className='latest'>
-        Últimas Novidades Ordenô
-      </h5>
+      <h5 className='latest'>Últimas Novidades Ordenô</h5>
 
       {loading ? (
         <Loader />

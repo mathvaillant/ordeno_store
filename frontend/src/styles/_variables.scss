@@ -1,8 +1,8 @@
 /* COLORS */
 $Black: rgb(5, 5, 5);
 $White: rgb(238, 238, 238);
-$AltWhite: antiquewhite;
-$PrimaryColor: #ffe5b6;
+$AltWhite: black;
+$PrimaryColor: #ffba39;
 $SecondaryColor: #443c3b;
 $ThirdColor: #82735f;
 $FourthColor: #16161594;
@@ -14,11 +14,13 @@ $DarkShadow: 2px 4px 10px rgba(0, 0, 0, 0.315);
 
 /* STOCK */
 .inStock {
+  border-radius: 4px;
   background-color: $Green;
   color: $Black;
 }
 
 .outOfStock {
+  border-radius: 4px;
   background-color: $Red;
   color: $White;
 }

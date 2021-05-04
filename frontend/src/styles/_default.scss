@@ -1,12 +1,13 @@
 /* RATING */
 .rating {
   span {
-    color: $AltWhite;
+    color: $PrimaryColor;
     i {
       margin: 0 1px;
     }
   }
   .rating__text {
+    color: $Black;
     font-size: 12px;
     font-style: italic;
   }

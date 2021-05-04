@@ -8,6 +8,7 @@ main {
   padding: 1rem;
   border-radius: 8px;
   box-shadow: $DarkShadow;
+  background-color: white;
 }
 
 html,
@@ -20,12 +21,12 @@ body {
 
 .app__container {
   background: transparent;
-  margin: 2rem;
   width: auto;
 }
 
 .latest {
-  color: $ThirdColor;
+  color: $Black;
+  font-weight: 700;
   padding: 1rem 1rem 1rem 0rem;
   font-weight: 300;
 }
