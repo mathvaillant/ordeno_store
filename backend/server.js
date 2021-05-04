@@ -6,6 +6,7 @@ import connectDB from './config/db.js'
 import colors from 'colors'
 
 import productRoutes from './routes/productRoutes.js'
+import userRoutes from './routes/userRoutes.js'
 
 // dotenv.donfig() comes first!!!
 dotenv.config()
@@ -13,12 +14,15 @@ dotenv.config()
 connectDB()
 const app = express()
 
+app.use(express.json())
+
 app.get('/', (req, res) => {
   res.send('API is running right now...')
 })
 
 // everything that goes to /api/products is linked to productRouter
 app.use('/api/products', productRoutes)
+app.use('/api/users', userRoutes)
 
 // if users try to access anything that isn't a route, send a 404 NOT FOUND status
 // override the default error handler using err first: (err, req, res, next)
