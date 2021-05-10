@@ -15,6 +15,16 @@ userSchemma.methods.matchPassword = async function (enteredPassword) {
   return await bcrypt.compare(enteredPassword, this.password)
 }
 
+userSchemma.pre('save', async function (next) {
+  if (!this.isModified('password')) {
+    // Will skip the hash of the password
+    next()
+  }
+
+  const salt = await bcrypt.genSalt(10)
+  this.password = await bcrypt.hash(this.password, salt)
+})
+
 const User = mongoose.model('User', userSchemma)
 
 export default User
