@@ -2,11 +2,7 @@
 @import '../styles/styles.scss';
 
 .btn {
-  @extend .btn;
-}
-
-.altWhite {
-  color: $AltWhite !important;
+  @extend .blackBtn;
 }
 
 .listgroup__item {

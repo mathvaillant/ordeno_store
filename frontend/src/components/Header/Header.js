@@ -11,25 +11,17 @@ function Header() {
       <Navbar collapseOnSelect className='p-1'>
         <Container className='header__container'>
           <LinkContainer className='header__container__logo' to='/'>
-            <Navbar.Brand>
-              <Image
-                className='header__container__logo__img'
-                src={Logo}
-                fluid
-              />
-            </Navbar.Brand>
+            <Navbar.Brand>ORDENÔ</Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
             <Nav className='ml-auto'>
               <LinkContainer to='/login' className='navbar__menu__links '>
-                <Nav.Link>
-                  <i className='fas fa-user'></i> Sign In
-                </Nav.Link>
+                <Nav.Link>Sign In</Nav.Link>
               </LinkContainer>
               <LinkContainer to='/cart' className='navbar__menu__links '>
                 <Nav.Link>
-                  <i className='fas fa-shopping-cart'></i> Cart
+                  <i className='fas fa-shopping-cart'></i>
                 </Nav.Link>
               </LinkContainer>
             </Nav>

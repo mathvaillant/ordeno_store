@@ -2,10 +2,11 @@
 @import '../../styles/styles';
 
 .navbar__menu__links {
+  display: flex;
+  margin-top: 5px;
   color: $White !important;
-  &:hover {
-    text-decoration: underline;
-  }
+  font-weight: 200;
+  font-size: 10px;
 }
 
 .header {
@@ -18,19 +19,11 @@
     display: flex;
     align-items: flex-start;
     justify-content: flex-end;
-    margin-top: 4px;
     .header__container__logo {
-      background-color: $Black;
-      padding: 0 !important;
-      border: 7px solid $Black;
-      border-radius: 50%;
-      width: 90px;
-      position: relative;
-      left: 50%;
-      transform: translate(-50%);
-      .header__container__logo__img {
-        border-radius: 50%;
-      }
+      color: White;
+      font-size: 22px;
+      font-weight: 100;
+      font-family: $LogoFont;
     }
   }
 }

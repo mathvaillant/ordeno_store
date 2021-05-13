@@ -10,7 +10,7 @@ $Red: #dc362d;
 $Green: #05ac72;
 
 /* BOX SHADOWS */
-$DarkShadow: 2px 4px 10px rgba(0, 0, 0, 0.315);
+$DarkShadow: 4px 3px 15px rgba(0, 0, 0, 0.582);
 
 /* STOCK */
 .inStock {
@@ -24,3 +24,7 @@ $DarkShadow: 2px 4px 10px rgba(0, 0, 0, 0.315);
   background-color: $Red;
   color: $White;
 }
+
+/* FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Pathway+Gothic+One&display=swap');
+$LogoFont: 'Pathway Gothic One', sans-serif;

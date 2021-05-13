@@ -14,15 +14,23 @@
 }
 
 /* BTN */
-.btn {
-  background-color: transparent;
-  border-left: dashed $ThirdColor 1px;
-  border-right: dashed $ThirdColor 1px;
-  padding: 0.1rem 1rem;
-  color: $ThirdColor;
+
+.blackBtn {
+  text-decoration: none;
+  font-weight: 300;
+  width: fit-content;
+  padding: 0.2rem 1rem;
+  border-radius: 2px;
+  font-size: 12px;
+  background-color: #000;
+  color: white;
+  border: none;
+  box-shadow: 4px 3px 15px rgba(0, 0, 0, 0.582);
+  cursor: pointer;
+  &:active {
+    transform: scale(1.07);
+  }
   &:hover {
-    color: $White;
-    text-decoration: underline;
-    background-color: $ThirdColor;
+    color: white;
   }
 }
