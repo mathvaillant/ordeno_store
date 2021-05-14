@@ -1,29 +1,32 @@
 /* Variables */
 @import '../styles/styles.scss';
 
-.btn {
-  @extend .blackBtn;
-}
-
-.listgroup__item {
-  background: transparent !important;
-  .listgroup__item__select {
-    background-color: $Black;
-    color: white;
+.productScreen {
+  height: 100vh;
+  .btn {
+    @extend .blackBtn;
   }
-}
 
-.listgroup {
   .listgroup__item {
-    h3 {
-      font-size: 16px;
+    background: transparent !important;
+    .listgroup__item__select {
+      background-color: $Black;
+      color: white;
     }
-    h3,
-    p {
-      color: $Black;
-    }
-    h5 {
-      color: $Black;
+  }
+
+  .listgroup {
+    .listgroup__item {
+      h3 {
+        font-size: 16px;
+      }
+      h3,
+      p {
+        color: $Black;
+      }
+      h5 {
+        color: $Black;
+      }
     }
   }
 }

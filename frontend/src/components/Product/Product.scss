@@ -4,20 +4,16 @@
 .product {
   background-color: transparent;
   .product__body {
-    border-bottom: 1px solid $ThirdColor;
-    border-width: thin;
-    background-color: $White;
     .product__body__a {
       color: $Black;
       font-weight: 600;
-      &:hover {
-        color: $White;
-      }
     }
     .product__body__rating {
     }
     .product__body__price {
       color: $Black;
+      font-weight: 100;
+      font-size: 1rem;
     }
   }
 }

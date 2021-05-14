@@ -10,7 +10,7 @@ function Product({ product }) {
   const { _id, image, name, numReviews, rating, price } = product
 
   return (
-    <Card className='my-3 mp-3 rounded product'>
+    <Card className='my-3 mp-3  product'>
       {/* Each product item has it's own url */}
       <Link to={`/product/${_id}`}>
         <Card.Img

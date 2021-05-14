@@ -29,7 +29,7 @@ function ProductScreen({ history, match }) {
   }
 
   return (
-    <>
+    <div className='productScreen'>
       <Link className='btn mb-3' to='/'>
         BACK
       </Link>
@@ -120,7 +120,7 @@ function ProductScreen({ history, match }) {
           </Col>
         </Row>
       )}
-    </>
+    </div>
   )
 }
 
