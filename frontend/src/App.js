@@ -9,11 +9,13 @@ import CartScreen from './screens/CartScreen'
 
 import { Container } from 'react-bootstrap'
 import LoginScreen from './screens/LoginScreen'
+import Showcase from './components/Showcase/Showcase'
 
 function App() {
   return (
     <Router>
       <Header />
+      <Route exact path='/' component={Showcase} />
       <main>
         <Container className='app__container'>
           <Route exact path='/login' component={LoginScreen} />

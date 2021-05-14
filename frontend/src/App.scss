@@ -3,11 +3,8 @@
 
 main {
   min-height: 80vh;
-  max-width: 90%;
-  margin: 5rem auto;
+  margin: 0rem auto;
   padding: 1rem;
-  border-radius: 8px;
-  box-shadow: $DarkShadow;
   background-color: white;
 }
 
@@ -21,7 +18,7 @@ body {
 
 .app__container {
   background: transparent;
-  width: auto;
+  width: 100%;
 }
 
 .latest {

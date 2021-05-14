@@ -3,10 +3,6 @@
 
 .product {
   background-color: transparent;
-  transition: ease 1s;
-  &:hover {
-    transform: scale(1.01);
-  }
   .product__body {
     border-bottom: 1px solid $ThirdColor;
     border-width: thin;

@@ -1,9 +1,8 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import './Header.scss'
-import Logo from '../../images/_logo_crop.png'
 import { LinkContainer } from 'react-router-bootstrap'
 
-import { Navbar, Nav, Container, Image } from 'react-bootstrap'
+import { Navbar, Nav, Container } from 'react-bootstrap'
 
 function Header() {
   return (

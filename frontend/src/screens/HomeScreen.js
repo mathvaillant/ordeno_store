@@ -6,6 +6,8 @@ import Message from '../components/Message/Message'
 import { useDispatch, useSelector } from 'react-redux'
 import { listProducts } from '../actions/productActions'
 
+import './HomeScreen.scss'
+
 import PropTypes from 'prop-types'
 
 function HomeScreen() {
@@ -19,7 +21,7 @@ function HomeScreen() {
   }, [dispatch])
 
   return (
-    <div title='HomeScreen '>
+    <div title='HomeScreen' className='HomeScreen'>
       <h5 className='latest'>Últimas Novidades Ordenô</h5>
 
       {loading ? (
