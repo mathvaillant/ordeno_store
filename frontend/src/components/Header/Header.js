@@ -16,7 +16,7 @@ function Header() {
           <Navbar.Collapse id='basic-navbar-nav'>
             <Nav className='ml-auto'>
               <LinkContainer to='/login' className='navbar__menu__links '>
-                <Nav.Link>Sign In</Nav.Link>
+                <Nav.Link>Entrar</Nav.Link>
               </LinkContainer>
               <LinkContainer to='/cart' className='navbar__menu__links '>
                 <Nav.Link>
