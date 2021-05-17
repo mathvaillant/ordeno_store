@@ -1,4 +1,11 @@
 @import '../styles/styles.scss';
 
 .HomeScreen {
+  .HomeScreenRow {
+    .HomeScreenRow__col {
+      display: flex;
+      .HomeScreenRow__product {
+      }
+    }
+  }
 }

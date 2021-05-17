@@ -1,13 +1,23 @@
-import React, { useEffect, useRef } from 'react'
+import React from 'react'
 import './Header.scss'
 import { LinkContainer } from 'react-router-bootstrap'
-
-import { Navbar, Nav, Container } from 'react-bootstrap'
+import { useDispatch, useSelector } from 'react-redux'
+import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap'
+import { logout } from '../../actions/userActions'
 
 function Header() {
+  const dispatch = useDispatch()
+
+  const userLogin = useSelector((state) => state.userLogin)
+  const { userInfo } = userLogin
+
+  const logoutHandler = () => {
+    dispatch(logout())
+  }
+
   return (
     <header className='header'>
-      <Navbar collapseOnSelect className='p-1'>
+      <Navbar collapseOnSelect className='p-1 header__navbar'>
         <Container className='header__container'>
           <LinkContainer className='header__container__logo' to='/'>
             <Navbar.Brand>ORDENÔ</Navbar.Brand>
@@ -15,9 +25,23 @@ function Header() {
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
             <Nav className='ml-auto'>
-              <LinkContainer to='/login' className='navbar__menu__links '>
-                <Nav.Link>Entrar</Nav.Link>
-              </LinkContainer>
+              {userInfo ? (
+                <NavDropdown title={userInfo.name} id='username'>
+                  <LinkContainer to='/profile'>
+                    <NavDropdown.Item>
+                      <span>Perfil</span>
+                    </NavDropdown.Item>
+                  </LinkContainer>
+                  <NavDropdown.Item onClick={logoutHandler}>
+                    <span>Sair</span>
+                  </NavDropdown.Item>
+                </NavDropdown>
+              ) : (
+                <LinkContainer to='/login' className='navbar__menu__links '>
+                  <Nav.Link>Entrar</Nav.Link>
+                </LinkContainer>
+              )}
+
               <LinkContainer to='/cart' className='navbar__menu__links '>
                 <Nav.Link>
                   <i className='fas fa-shopping-cart'></i>

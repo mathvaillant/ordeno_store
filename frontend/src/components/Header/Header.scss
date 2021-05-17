@@ -9,21 +9,29 @@
   font-size: 10px;
 }
 
+#username {
+  color: white;
+  margin-top: 2px;
+}
+
 .header {
   position: sticky;
   top: 0;
   z-index: 1000;
   background-color: black;
   max-height: 55px;
-  .header__container {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-end;
-    .header__container__logo {
-      color: White;
-      font-size: 22px;
-      font-weight: 100;
-      font-family: $LogoFont;
+  .header__navbar {
+    margin: 0rem 2rem;
+    .header__container {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-end;
+      .header__container__logo {
+        color: White;
+        font-size: 22px;
+        font-weight: 100;
+        font-family: $LogoFont;
+      }
     }
   }
 }

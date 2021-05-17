@@ -24,13 +24,13 @@ function Product({ product }) {
       <Card.Body className='product__body'>
         <Link className='product__body__a' to={`/product/${_id}`}>
           <Card.Title as='div' className='product__body__title'>
-            <strong>{name}</strong>
+            <span>{name}</span>
           </Card.Title>
         </Link>
 
-        <Card.Text as='div' className='product__body__rating'>
+        {/* <Card.Text as='div' className='product__body__rating'>
           <Rating value={rating} text={`${numReviews} reviews`} />
-        </Card.Text>
+        </Card.Text> */}
 
         <Card.Text as='h3' className='product__body__price'>
           €{price}

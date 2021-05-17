@@ -2,18 +2,24 @@
 @import '../../styles/styles';
 
 .product {
+  border: 0;
   background-color: transparent;
   .product__body {
     .product__body__a {
-      color: $Black;
-      font-weight: 600;
+      .product__body__title {
+        span {
+          font-weight: 900 !important;
+          font-size: 20px;
+          font-family: $LogoFont;
+        }
+      }
     }
     .product__body__rating {
     }
     .product__body__price {
-      color: $Black;
-      font-weight: 100;
-      font-size: 1rem;
+      font-weight: 900 !important;
+      font-size: 20px;
+      font-family: $LogoFont;
     }
   }
 }
