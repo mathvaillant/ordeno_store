@@ -2,4 +2,7 @@
 
 .CartScreen {
   height: 100vh;
+  .CartScreen__backBtn {
+    @extend .blackBtn;
+  }
 }

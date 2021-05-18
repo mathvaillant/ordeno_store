@@ -4,8 +4,9 @@ import { useDispatch, useSelector } from 'react-redux'
 import Message from '../components/Message/Message'
 import Loader from '../components/Loader'
 
-import { getUserDetails } from '../actions/userActions'
+import { getUserDetails, updateUserProfile } from '../actions/userActions'
 import './LoginScreen.scss'
+import { USER_UPDATE_PROFILE_RESET } from '../types/userTypes'
 
 const ProfileScreen = ({ history }) => {
   const [email, setEmail] = useState('')
@@ -22,18 +23,22 @@ const ProfileScreen = ({ history }) => {
   const userLogin = useSelector((state) => state.userLogin)
   const { userInfo } = userLogin
 
+  const userUpdateProfile = useSelector((state) => state.userUpdateProfile)
+  const { success } = userUpdateProfile
+
   useEffect(() => {
     if (!userInfo) {
       history.push('/login')
     } else {
-      if (!user.name) {
+      if (!user || !user.name || success) {
+        dispatch({ type: USER_UPDATE_PROFILE_RESET })
         dispatch(getUserDetails('profile'))
       } else {
         setName(user.name)
         setEmail(user.email)
       }
     }
-  }, [userInfo, history, dispatch, user])
+  }, [userInfo, history, dispatch, user, success])
 
   const submitHandler = (e) => {
     e.preventDefault()
@@ -41,17 +46,18 @@ const ProfileScreen = ({ history }) => {
     if (password !== confirmPassword) {
       setMessage('As senhas não correspondem')
     } else {
-      // DISPATCH UPDATE PROFILE
+      dispatch(updateUserProfile({ id: user._id, name, email, password }))
     }
   }
 
   return (
-    <div className='ProfileScreen'>
+    <div className='ProfileScreen' style={{ height: '100vh' }}>
       <Row>
-        <Col md={3}>
+        <Col md={4}>
           <h2>Editar Perfil</h2>
           {error && <Message variant='danger'>{error}</Message>}
           {message && <Message variant='danger'>{message}</Message>}
+          {success && <Message variant='success'>Alterações Salvas</Message>}
           {loading && <Loader />}
           <Form onSubmit={submitHandler}>
             <Form.Group controlId='name'>
@@ -95,7 +101,7 @@ const ProfileScreen = ({ history }) => {
             </Button>
           </Form>
         </Col>
-        <Col md={9}>
+        <Col md={8}>
           <h2>Meus pedidos</h2>
         </Col>
       </Row>

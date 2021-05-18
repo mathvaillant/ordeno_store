@@ -35,10 +35,13 @@ function CartScreen({ match, location, history }) {
     <div className='CartScreen'>
       <Row>
         <Col md={8}>
-          <h1>Shopping Cart</h1>
+          <h1>Carrinho</h1>
           {cartItems.length === 0 ? (
             <Message>
-              Your cart is empty <Link to='/'>Go Back</Link>{' '}
+              Seu carrinho está vazio{' '}
+              <Link className='CartScreen__backBtn' to='/'>
+                Voltar
+              </Link>{' '}
             </Message>
           ) : (
             <ListGroup variant='flush'>
@@ -105,7 +108,7 @@ function CartScreen({ match, location, history }) {
                   className='btn-block'
                   disabled={cartItems.length === 0}
                   onClick={checkoutHandler}>
-                  Proceed to Checkout
+                  Proceder para o Checkout
                 </Button>
               </ListGroup.Item>
             </ListGroup>
