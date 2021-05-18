@@ -79,9 +79,9 @@ function CartScreen({ match, location, history }) {
                       <Button
                         type='button'
                         variant='light'
-                        onClick={() => removeFromCartHandler(item.product)}
-                      />
-                      <i className='fas fa-trash'></i>
+                        onClick={() => removeFromCartHandler(item.product)}>
+                        <i className='fas fa-trash'></i>
+                      </Button>
                     </Col>
                   </Row>
                 </ListGroup.Item>
