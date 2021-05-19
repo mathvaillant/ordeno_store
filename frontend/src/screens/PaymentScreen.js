@@ -40,7 +40,7 @@ const PaymentScreen = ({ history }) => {
               <div style={{ display: 'flex', alignItems: 'center' }}>
                 <Form.Check
                   type='radio'
-                  label='PayPal or Credit Card'
+                  label='PayPal'
                   id='PayPal'
                   name='paymentMethod'
                   value='PayPal'
@@ -58,7 +58,7 @@ const PaymentScreen = ({ history }) => {
               <div style={{ display: 'flex', alignItems: 'center' }}>
                 <Form.Check
                   type='radio'
-                  label='Stripe'
+                  label='Credit Card'
                   id='Stripe'
                   name='paymentMethod'
                   value='Stripe'
