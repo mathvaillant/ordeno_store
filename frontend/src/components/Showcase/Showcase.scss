@@ -2,7 +2,7 @@
 .showcase {
   display: flex;
   max-height: 600px;
-  background-image: url('../../images/ocean.jpg');
+  background-image: url('../../images/ocean2.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -33,6 +33,10 @@
 
 @media (max-width: '560px') {
   .showcase {
+    background-image: url('../../images/waves.gif');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     button {
       top: 25%;
     }

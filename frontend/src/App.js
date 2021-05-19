@@ -13,6 +13,7 @@ import Showcase from './components/Showcase/Showcase'
 import RegisterScreen from './screens/RegisterScreen'
 import ProfileScreen from './screens/ProfileScreen'
 import ShippingScreen from './screens/ShippingScreen'
+import PaymentScreen from './screens/PaymentScreen'
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route exact path='/login' component={LoginScreen} />
           <Route exact path='/profile' component={ProfileScreen} />
           <Route exact path='/shipping' component={ShippingScreen} />
+          <Route exact path='/payment' component={PaymentScreen} />
           <Route exact path='/register' component={RegisterScreen} />
           <Route exact path='/product/:id' component={ProductScreen} />
           <Route exact path='/cart/:id?' component={CartScreen} />
