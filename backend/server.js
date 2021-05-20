@@ -7,6 +7,7 @@ import colors from 'colors'
 
 import productRoutes from './routes/productRoutes.js'
 import userRoutes from './routes/userRoutes.js'
+import orderRoutes from './routes/orderRoutes.js'
 
 // dotenv.donfig() comes first!!!
 dotenv.config()
@@ -20,9 +21,10 @@ app.get('/', (req, res) => {
   res.send('API is running right now...')
 })
 
-// everything that goes to /api/products is linked to productRouter
+// All the routes
 app.use('/api/products', productRoutes)
 app.use('/api/users', userRoutes)
+app.use('/api/orders', orderRoutes)
 
 // if users try to access anything that isn't a route, send a 404 NOT FOUND status
 // override the default error handler using err first: (err, req, res, next)

@@ -9,6 +9,7 @@ function Header() {
   const dispatch = useDispatch()
 
   const userLogin = useSelector((state) => state.userLogin)
+  const cart = useSelector((state) => state.cart)
   const { userInfo } = userLogin
 
   const logoutHandler = () => {
@@ -44,7 +45,16 @@ function Header() {
 
               <LinkContainer to='/cart' className='navbar__menu__links '>
                 <Nav.Link>
-                  <i className='fas fa-shopping-cart'></i>
+                  <i className='fas fa-shopping-cart'></i>{' '}
+                  <span
+                    style={{
+                      backgroundColor: 'red',
+                      borderRadius: '50%',
+                      padding: '3px 6.3px',
+                      marginTop: '-5px',
+                    }}>
+                    {cart.cartItems.length}
+                  </span>
                 </Nav.Link>
               </LinkContainer>
             </Nav>
