@@ -31,7 +31,7 @@ function ProductScreen({ history, match }) {
   return (
     <div className='productScreen'>
       <Link className='btn mb-3' to='/'>
-        BACK
+        VOLTAR
       </Link>
       {loading ? (
         <Loader />
@@ -54,7 +54,7 @@ function ProductScreen({ history, match }) {
                 />
               </ListGroup.Item>
               <ListGroup.Item className='listgroup__item'>
-                <h5>Price: €{product.price}</h5>
+                <h5>Preço: €{product.price}</h5>
               </ListGroup.Item>
               <ListGroup.Item className='listgroup__item'>
                 <p>{product.description}</p>
@@ -66,7 +66,7 @@ function ProductScreen({ history, match }) {
               <ListGroup variant='flush'>
                 <ListGroup.Item className='listgroup__item'>
                   <Row>
-                    <Col className='altWhite'>Price:</Col>
+                    <Col className='altWhite'>Preço:</Col>
                     <Col className='altWhite'>€{product.price}</Col>
                   </Row>
                 </ListGroup.Item>
@@ -77,7 +77,9 @@ function ProductScreen({ history, match }) {
                       className={
                         product.countInStock > 0 ? 'inStock' : 'outOfStock'
                       }>
-                      {product.countInStock > 0 ? 'In Stock' : 'Out of Stock'}
+                      {product.countInStock > 0
+                        ? 'Em estoque'
+                        : 'Fora de estoque'}
                     </Col>
                   </Row>
                 </ListGroup.Item>
@@ -85,7 +87,7 @@ function ProductScreen({ history, match }) {
                 {product.countInStock > 0 && (
                   <ListGroup.Item className='listgroup__item'>
                     <Row style={{ display: 'flex', alignItems: 'center' }}>
-                      <Col className='altWhite'>Amount: </Col>
+                      <Col className='altWhite'>Quantidade: </Col>
                       <Col>
                         <Form.Control
                           className='listgroup__item__select'
@@ -112,7 +114,7 @@ function ProductScreen({ history, match }) {
                     className='btn-block'
                     type='button'
                     disabled={product.countInStock === 0}>
-                    Add to Cart
+                    Adicionar ao carrinho
                   </Button>
                 </ListGroup.Item>
               </ListGroup>
