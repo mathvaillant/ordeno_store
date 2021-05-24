@@ -43,6 +43,20 @@ function Header() {
                 </LinkContainer>
               )}
 
+              {userInfo && userInfo.isAdmin && (
+                <NavDropdown title='Adm' id='adminmenu'>
+                  <LinkContainer to='/admin/userList'>
+                    <NavDropdown.Item>Usuários</NavDropdown.Item>
+                  </LinkContainer>
+                  <LinkContainer to='/admin/productList'>
+                    <NavDropdown.Item>Produtos</NavDropdown.Item>
+                  </LinkContainer>
+                  <LinkContainer to='/admin/orderList'>
+                    <NavDropdown.Item>Pedidos</NavDropdown.Item>
+                  </LinkContainer>
+                </NavDropdown>
+              )}
+
               <LinkContainer to='/cart' className='navbar__menu__links '>
                 <Nav.Link>
                   <i className='fas fa-shopping-cart'></i>{' '}
