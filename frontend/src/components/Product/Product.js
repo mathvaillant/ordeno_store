@@ -33,7 +33,7 @@ function Product({ product }) {
         </Card.Text> */}
 
         <Card.Text as='h3' className='product__body__price'>
-          €{price}
+          R${price}
         </Card.Text>
       </Card.Body>
     </Card>
