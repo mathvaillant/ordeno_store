@@ -38,8 +38,7 @@ export const listProducts = () => async (dispatch) => {
   }
 }
 
-// Fetch /id product here instead of fetching in the ProductScreen
-export const productDetails = (id) => async (dispatch) => {
+export const listProductDetails = (id) => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_DETAILS_REQUEST })
 

@@ -6,7 +6,7 @@ import Message from '../components/Message/Message'
 import Rating from '../components/Rating/Rating'
 import './ProductScreen.scss'
 import { useDispatch, useSelector } from 'react-redux'
-import { productDetails } from '../actions/productActions'
+import { listProductDetails } from '../actions/productActions'
 
 import PropTypes from 'prop-types'
 
@@ -20,7 +20,7 @@ function ProductScreen({ history, match }) {
   const { loading, product, error } = productDetailsList
 
   useEffect(() => {
-    dispatch(productDetails(match.params.id))
+    dispatch(listProductDetails(match.params.id))
   }, [match])
 
   const addToCartHandler = () => {
