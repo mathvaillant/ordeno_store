@@ -76,7 +76,7 @@ const OrderScreen = ({ match }) => {
               <h4>Envio</h4>
               <p>
                 {' '}
-                <strong>Name: </strong> {order.user.name}
+                <strong>Nome: </strong> {order.user.name}
               </p>
               <p>
                 <strong>Email: </strong>{' '}
