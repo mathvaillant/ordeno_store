@@ -44,12 +44,12 @@ const deleteProduct = asyncHandler(async (req, res) => {
 // @access  Private/Admin
 const createProduct = asyncHandler(async (req, res) => {
   const product = new Product({
-    name: 'Necessaire exclusiva da Ordenô store',
+    name: 'Nome do produto',
     price: 0,
     user: req.user._id,
-    image: '/images/sample.jpg',
-    brand: 'Ordenô',
-    category: 'Bags',
+    image: 'URL do produto',
+    brand: 'Marca',
+    category: 'categoria',
     countInStock: 0,
     numReviews: 0,
     description: 'descrição',

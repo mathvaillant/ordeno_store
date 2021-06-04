@@ -5,7 +5,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import Message from '../components/Message/Message'
 import Loader from '../components/Loader'
 import FormContainer from '../components/FormContainer/FormContainer'
-import { listProductDetails } from '../actions/productActions'
+import { listProductDetails, updateProduct } from '../actions/productActions'
+import { PRODUCT_UPDATE_RESET } from '../types/productTypes'
 /* import './ProductEditScreen.scss' */
 
 const ProductEditScreen = ({ match, history }) => {
@@ -23,23 +24,46 @@ const ProductEditScreen = ({ match, history }) => {
   const productDetails = useSelector((state) => state.productDetails)
   const { loading, error, product } = productDetails
 
+  const productUpdate = useSelector((state) => state.productUpdate)
+  const {
+    loading: loadingUpdate,
+    error: errorUpdate,
+    success: successUpdate,
+  } = productUpdate
+
   useEffect(() => {
-    if (!product.name || product._id !== productID) {
-      dispatch(listProductDetails(productID))
+    if (successUpdate) {
+      dispatch({ type: PRODUCT_UPDATE_RESET })
+      history.push('/admin/productList')
     } else {
-      setName(product.name)
-      setPrice(product.price)
-      setImage(product.image)
-      setBrand(product.brand)
-      setCountInStock(product.countInStock)
-      setCategory(product.category)
-      setDescription(product.description)
+      if (!product.name || product._id !== productID) {
+        dispatch(listProductDetails(productID))
+      } else {
+        setName(product.name)
+        setPrice(product.price)
+        setImage(product.image)
+        setBrand(product.brand)
+        setCountInStock(product.countInStock)
+        setCategory(product.category)
+        setDescription(product.description)
+      }
     }
-  }, [product, dispatch, productID, history])
+  }, [product, dispatch, productID, history, successUpdate])
 
   const submitHandler = (e) => {
     e.preventDefault()
-    // Update product
+    dispatch(
+      updateProduct({
+        _id: productID,
+        name: name,
+        price: price,
+        image: image,
+        brand: brand,
+        countInStock: countInStock,
+        category: category,
+        description: description,
+      })
+    )
   }
 
   return (
@@ -52,9 +76,10 @@ const ProductEditScreen = ({ match, history }) => {
           Atualizar dados do produto:{' '}
           <small>{product.name ? product.name : ''}</small>
         </h4>
-
+        {loadingUpdate && <Loader />}
+        {errorUpdate && <Message variant='danger'>{errorUpdate}</Message>}
         {error && <Message variant='danger'>{error}</Message>}
-        {/* {loading && <Loader />} */}
+        {loading && <Loader />}
         <Form onSubmit={submitHandler}>
           <Form.Group controlId='name'>
             <Form.Label>Nome</Form.Label>
