@@ -10,15 +10,16 @@ import './HomeScreen.scss'
 
 import PropTypes from 'prop-types'
 
-function HomeScreen() {
+function HomeScreen({ match }) {
   const dispatch = useDispatch()
+  const keyword = match.params.keyword
 
   const productList = useSelector((state) => state.productList)
   const { products, loading, error } = productList
 
   useEffect(() => {
-    dispatch(listProducts())
-  }, [dispatch])
+    dispatch(listProducts(keyword))
+  }, [dispatch, keyword])
 
   return (
     <div title='HomeScreen' className='HomeScreen'>
