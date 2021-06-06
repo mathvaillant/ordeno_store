@@ -2,10 +2,10 @@
 @import './styles/styles';
 
 main {
-  min-height: 80vh;
-  margin: 0rem auto;
+  margin: 0rem auto 5rem auto;
   padding: 1rem;
   background-color: white;
+  height: auto;
 }
 
 html,
@@ -27,4 +27,9 @@ body {
   font-weight: 700;
   padding: 1rem 1rem 1rem 0rem;
   font-weight: 300;
+}
+
+h5 {
+  text-transform: none;
+  letter-spacing: normal;
 }

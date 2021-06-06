@@ -153,63 +153,62 @@ function ProductScreen({ history, match }) {
           </Row>
           <Row>
             <Col>
-              <h5>
-                Avaliações
-                {product.reviews.length === 0 && (
-                  <Message>Este produto ainda não possui avaliações</Message>
-                )}
-                <ListGroup variant='flush'>
-                  {product.reviews.map((review) => (
-                    <ListGroup.Item key={review._id}>
-                      <strong>{review.name}</strong>
-                      <Rating value={review.rating} />
-                      <p>{review.createdAt}</p>
-                      <p>{review.comment}</p>
-                    </ListGroup.Item>
-                  ))}
-                  <ListGroup.Item>
-                    <h5>Escrever uma avaliação</h5>
-                    {errorProductReview && (
-                      <Message variant='danger'>{errorProductReview}</Message>
-                    )}
-                    {userInfo ? (
-                      <Form onSubmit={submitHandler}>
-                        <Form.Group controlId='rating'>
-                          <Form.Label>Nota</Form.Label>
-                          <Form.Control
-                            as='select'
-                            value={rating}
-                            onChange={(e) => setRating(e.target.value)}>
-                            <option value=''>Selecionar...</option>
-                            <option value='1'>1 - Ruim 😓 </option>
-                            <option value='2'>2 - Razoável 😐</option>
-                            <option value='3'>3 - Bom 🙂</option>
-                            <option value='4'>4 - Muito Bom 😃</option>
-                            <option value='5'>5 - Excelente 😍</option>
-                          </Form.Control>
-                        </Form.Group>
-                        <Form.Group controlId='comment'>
-                          <Form.Label>Comentário</Form.Label>
-                          <Form.Control
-                            as='textarea'
-                            row='3'
-                            onChange={(e) =>
-                              setComment(e.target.value)
-                            }></Form.Control>
-                        </Form.Group>
-                        <Button type='submit' variant='light'>
-                          Avaliar
-                        </Button>
-                      </Form>
-                    ) : (
-                      <Message>
-                        Por Favor, <Link to='/login'> entre com sua conta</Link>{' '}
-                        para escrever uma avaliação.
-                      </Message>
-                    )}
+              <br />
+              <h3>Avaliações</h3>
+              {product.reviews.length === 0 && (
+                <Message>Este produto ainda não possui avaliações</Message>
+              )}
+              <ListGroup variant='flush' className='reviews'>
+                {product.reviews.map((review) => (
+                  <ListGroup.Item key={review._id} className='review'>
+                    <strong>{review.name}</strong>
+                    <Rating value={review.rating} />
+                    <p>{review.createdAt}</p>
+                    <p>{review.comment}</p>
                   </ListGroup.Item>
-                </ListGroup>
-              </h5>
+                ))}
+                <ListGroup.Item>
+                  <h5>Escrever uma avaliação</h5>
+                  {errorProductReview && (
+                    <Message variant='danger'>{errorProductReview}</Message>
+                  )}
+                  {userInfo ? (
+                    <Form onSubmit={submitHandler}>
+                      <Form.Group controlId='rating'>
+                        <Form.Label>Nota</Form.Label>
+                        <Form.Control
+                          as='select'
+                          value={rating}
+                          onChange={(e) => setRating(e.target.value)}>
+                          <option value=''>Selecionar...</option>
+                          <option value='1'>1 - Ruim 😓 </option>
+                          <option value='2'>2 - Razoável 😐</option>
+                          <option value='3'>3 - Bom 🙂</option>
+                          <option value='4'>4 - Muito Bom 😃</option>
+                          <option value='5'>5 - Excelente 😍</option>
+                        </Form.Control>
+                      </Form.Group>
+                      <Form.Group controlId='comment'>
+                        <Form.Label>Comentário</Form.Label>
+                        <Form.Control
+                          as='textarea'
+                          row='3'
+                          onChange={(e) =>
+                            setComment(e.target.value)
+                          }></Form.Control>
+                      </Form.Group>
+                      <Button type='submit' variant='light'>
+                        Avaliar
+                      </Button>
+                    </Form>
+                  ) : (
+                    <Message>
+                      Por Favor, <Link to='/login'> entre com sua conta</Link>{' '}
+                      para escrever uma avaliação.
+                    </Message>
+                  )}
+                </ListGroup.Item>
+              </ListGroup>
             </Col>
           </Row>
         </>

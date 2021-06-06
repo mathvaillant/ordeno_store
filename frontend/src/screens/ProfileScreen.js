@@ -108,6 +108,7 @@ const ProfileScreen = ({ history }) => {
           </Form>
         </Col>
         <Col md={8}>
+          <br />
           <h4>Meus pedidos</h4>
           {loadingOrders ? (
             <Loader />
