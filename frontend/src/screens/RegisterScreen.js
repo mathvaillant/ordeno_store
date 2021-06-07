@@ -6,7 +6,7 @@ import Message from '../components/Message/Message'
 import Loader from '../components/Loader'
 import FormContainer from '../components/FormContainer/FormContainer'
 import { register } from '../actions/userActions'
-import './LoginScreen.scss'
+import './RegisterScreen.scss'
 
 const RegisterScreen = ({ location, history }) => {
   const [email, setEmail] = useState('')
@@ -82,7 +82,7 @@ const RegisterScreen = ({ location, history }) => {
               }></Form.Control>
           </Form.Group>
 
-          <Button type='submit' variant='primary'>
+          <Button type='submit' variant='primary ' className='register'>
             Registrar
           </Button>
         </Form>

@@ -10,6 +10,7 @@ import {
   createProduct,
 } from '../actions/productActions'
 import { PRODUCT_CREATE_RESET } from '../types/productTypes'
+import './ProductListScreen.scss'
 
 const ProductListScreen = ({ history, match }) => {
   const dispatch = useDispatch()
@@ -76,7 +77,7 @@ const ProductListScreen = ({ history, match }) => {
           <h3>Produtos</h3>
         </Col>
         <Col className='text-right'>
-          <Button className='my-3' onClick={createdProductHandler}>
+          <Button className='my-3 create' onClick={createdProductHandler}>
             <i className='fas fa-plus'></i> Criar Produto
           </Button>
         </Col>

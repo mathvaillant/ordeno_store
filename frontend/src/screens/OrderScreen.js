@@ -11,6 +11,7 @@ import {
   payOrder,
   deliverOrder,
 } from '../actions/orderActions'
+import './OrderScreen.scss'
 
 import { ORDER_PAY_RESET, ORDER_DELIVER_RESET } from '../types/orderTypes'
 
@@ -86,7 +87,7 @@ const OrderScreen = ({ match, history }) => {
   ) : error ? (
     <Message variant='danger'>{error}</Message>
   ) : (
-    <>
+    <div>
       <h4>Pedido {orderID}</h4>
       <Row>
         <Col md={8}>
@@ -211,7 +212,8 @@ const OrderScreen = ({ match, history }) => {
                     <Button
                       type='button'
                       className='btn btn-block'
-                      onClick={deliverHandler}>
+                      onClick={deliverHandler}
+                      className='shipped'>
                       Marcar como enviado
                     </Button>
                   </ListGroup.Item>
@@ -220,7 +222,7 @@ const OrderScreen = ({ match, history }) => {
           </Card>
         </Col>
       </Row>
-    </>
+    </div>
   )
 }
 

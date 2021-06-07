@@ -1,21 +1,7 @@
 @import '../../styles/styles.scss';
-.showcase {
-  display: flex;
-  max-height: 600px;
-  background-image: url('../../images/ocean.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  margin-top: -6rem;
-  z-index: 10;
-
-  img {
-    max-height: 600px;
-    margin-top: -4rem;
-    object-fit: contain;
-    width: 100%;
-    height: 100%;
-  }
+.carousel {
+  max-height: 80vh;
+  -webkit-mask-image: linear-gradient(180deg, #000, hsla(0, 0%, 100%, 1));
   button {
     @extend .whiteBtn;
     color: black;
@@ -25,20 +11,16 @@
     padding: 0.7rem 1.6rem;
     font-size: 1rem;
     position: absolute;
-    top: 40%;
+    top: 70%;
     left: 50%;
     transform: translate(-50%);
   }
 }
 
-@media (max-width: '560px') {
-  .showcase {
-    background-image: url('../../images/waves.gif');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+@media (min-width: 1200px) {
+  .carousel {
     button {
-      top: 25%;
+      top: 40%;
     }
   }
 }

@@ -47,7 +47,7 @@ function CartScreen({ match, location, history }) {
             <ListGroup variant='flush'>
               {cartItems.map((item) => (
                 <ListGroup.Item key={item.product}>
-                  <Row>
+                  <Row style={{ display: 'flex', alignItems: 'center' }}>
                     <Col md={3}>
                       <Image src={item.image} alt={item.name} fluid rounded />
                     </Col>

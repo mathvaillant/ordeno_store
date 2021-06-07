@@ -7,7 +7,7 @@ import Loader from '../components/Loader'
 
 import { getUserDetails, updateUserProfile } from '../actions/userActions'
 import { listMyOrders } from '../actions/orderActions'
-import './LoginScreen.scss'
+import './ProfileScreen.scss'
 import { USER_UPDATE_PROFILE_RESET } from '../types/userTypes'
 
 const ProfileScreen = ({ history }) => {
@@ -102,7 +102,7 @@ const ProfileScreen = ({ history }) => {
                 }></Form.Control>
             </Form.Group>
 
-            <Button type='submit' variant='primary'>
+            <Button type='submit' variant='primary' className='save'>
               Salvar alterações
             </Button>
           </Form>

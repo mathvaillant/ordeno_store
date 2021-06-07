@@ -8,7 +8,7 @@ import Loader from '../components/Loader'
 import FormContainer from '../components/FormContainer/FormContainer'
 import { listProductDetails, updateProduct } from '../actions/productActions'
 import { PRODUCT_UPDATE_RESET } from '../types/productTypes'
-/* import './ProductEditScreen.scss' */
+import './ProductEditScreen.scss'
 
 const ProductEditScreen = ({ match, history }) => {
   const productID = match.params.id
@@ -91,7 +91,7 @@ const ProductEditScreen = ({ match, history }) => {
 
   return (
     <>
-      <Link to='/admin/productlist' className='btn btn-light my-3'>
+      <Link to='/admin/productlist' className='btn update my-3'>
         Voltar
       </Link>
       <FormContainer>
@@ -173,7 +173,7 @@ const ProductEditScreen = ({ match, history }) => {
               onChange={(e) => setDescription(e.target.value)}></Form.Control>
           </Form.Group>
 
-          <Button type='submit' variant='primary'>
+          <Button type='submit' variant='primary' className='update'>
             Atualizar
           </Button>
         </Form>

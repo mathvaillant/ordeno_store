@@ -1,8 +1,14 @@
 @import '../styles/styles.scss';
 
 .CartScreen {
-  height: 100%;
+  height: 80vh;
   .CartScreen__backBtn {
     @extend .blackBtn;
+  }
+  .listgroup__item__select {
+    color: black !important;
+    option {
+      color: black !important;
+    }
   }
 }

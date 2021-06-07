@@ -4,6 +4,7 @@ import { Row, Col, Image, ListGroup, Card, Button, Form } from 'react-bootstrap'
 import Loader from '../components/Loader'
 import Message from '../components/Message/Message'
 import Rating from '../components/Rating/Rating'
+import Meta from '../components/Meta'
 import './ProductScreen.scss'
 import { useDispatch, useSelector } from 'react-redux'
 import {
@@ -11,6 +12,7 @@ import {
   createProductReview,
 } from '../actions/productActions'
 import { PRODUCT_CREATE_REVIEW_RESET } from '../types/productTypes'
+import './ProductScreen.scss'
 
 import PropTypes from 'prop-types'
 
@@ -66,6 +68,7 @@ function ProductScreen({ history, match }) {
         <Message variant='danger'>{error}</Message>
       ) : (
         <>
+          <Meta title={product.name} />
           <Row>
             <Col md={6}>
               <Image src={product.image} alt={product.name} fluid />

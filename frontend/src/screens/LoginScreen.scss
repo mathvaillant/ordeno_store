@@ -2,4 +2,7 @@
 
 .LoginScreen {
   height: 100vh;
+  .login {
+    @extend .blackBtn;
+  }
 }

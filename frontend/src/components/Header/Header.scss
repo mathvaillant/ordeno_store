@@ -3,7 +3,6 @@
 
 .navbar__menu__links {
   display: flex;
-  margin-top: 5px;
   color: $White !important;
   font-weight: 200;
   font-size: 10px;
@@ -11,28 +10,33 @@
 
 #username,
 #adminmenu {
-  color: rgb(219, 219, 219);
-  margin-top: 2px;
+  color: black;
+  margin-top: 5px;
 }
 
-.header {
+.header__navbar {
+  width: 100%;
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: black;
-  max-height: 55px;
+  background-color: white;
+  height: 50px;
+  padding: 0rem 1rem !important;
+  .navbar__collapsed {
+    background-color: white;
+    padding: 0rem 1rem;
+  }
+
+  .header__container__logo {
+    color: black;
+    font-size: 1.5rem;
+    font-weight: 300;
+    font-family: $LogoFont;
+  }
+}
+
+@media (min-width: 1200px) {
   .header__navbar {
-    margin: 0rem 2rem;
-    .header__container {
-      display: flex;
-      align-items: flex-start;
-      justify-content: flex-end;
-      .header__container__logo {
-        color: White;
-        font-size: 22px;
-        font-weight: 100;
-        font-family: $LogoFont;
-      }
-    }
+    padding: 0rem 6rem !important;
   }
 }
