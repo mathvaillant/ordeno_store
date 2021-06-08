@@ -119,10 +119,10 @@ const ProfileScreen = ({ history }) => {
               <thead>
                 <tr>
                   <th>ID</th>
-                  <th>DATE</th>
-                  <th>TOTAL</th>
-                  <th>PAID</th>
-                  <th>DELIVERED</th>
+                  <th>Data</th>
+                  <th>Total</th>
+                  <th>Pago</th>
+                  <th>Entrege</th>
                   <th></th>
                 </tr>
               </thead>
@@ -142,7 +142,7 @@ const ProfileScreen = ({ history }) => {
                     <td>
                       <LinkContainer to={`/order/${order._id}`}>
                         <Button className='btn-sm' variant='light'>
-                          Details
+                          Detalhes
                         </Button>
                       </LinkContainer>
                     </td>

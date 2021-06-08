@@ -38,7 +38,9 @@ function Header() {
               </NavDropdown.Item>
             </NavDropdown>
           ) : (
-            <LinkContainer to='/login' className='navbar__menu__links '>
+            <LinkContainer
+              to='/login'
+              style={{ marginTop: '4px', color: 'black' }}>
               <Nav.Link>Entrar</Nav.Link>
             </LinkContainer>
           )}
@@ -58,7 +60,7 @@ function Header() {
           )}
 
           <Route render={({ history }) => <SearchBox history={history} />} />
-          <LinkContainer to='/cart' className='navbar__menu__links '>
+          <LinkContainer to='/cart'>
             <Nav.Link>
               <img
                 src={Cart}
@@ -69,6 +71,7 @@ function Header() {
               />
               <span
                 style={{
+                  color: 'white',
                   backgroundColor: 'red',
                   borderRadius: '50%',
                   padding: '1px 7px',
