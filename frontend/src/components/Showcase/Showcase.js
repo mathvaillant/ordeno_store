@@ -27,7 +27,9 @@ const Showcase = () => {
           <Image src={bag.image} fluid />
         </Carousel.Item>
       ))}
-      <button onClick={handleClick}>Ver Produtos</button>
+      <button onClick={handleClick}>
+        <p>Ver Produtos</p>
+      </button>
     </Carousel>
   )
 }

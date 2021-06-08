@@ -57,7 +57,7 @@ const ProfileScreen = ({ history }) => {
   }
 
   return (
-    <div className='ProfileScreen' style={{ height: '100vh' }}>
+    <div className='ProfileScreen'>
       <Row>
         <Col md={4}>
           <h4>Editar Perfil</h4>

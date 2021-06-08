@@ -1,5 +1,8 @@
 @import '../styles/styles.scss';
 
-.save {
-  @extend .blackBtn;
+.ProfileScreen {
+  height: auto;
+  .save {
+    @extend .blackBtn;
+  }
 }
