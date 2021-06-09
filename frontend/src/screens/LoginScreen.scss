@@ -1,7 +1,6 @@
 @import '../styles/styles.scss';
 
 .LoginScreen {
-  height: 100vh;
   .login {
     @extend .blackBtn;
   }

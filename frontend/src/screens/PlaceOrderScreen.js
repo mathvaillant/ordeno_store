@@ -6,6 +6,8 @@ import Message from '../components/Message/Message'
 import CheckoutSteps from '../components/CheckoutSteps/CheckoutSteps'
 import { Link } from 'react-router-dom'
 
+import './PlaceOrderScreen.scss'
+
 const PlaceOrderScreen = ({ history }) => {
   const dispatch = useDispatch()
   const cart = useSelector((state) => state.cart)
@@ -48,7 +50,7 @@ const PlaceOrderScreen = ({ history }) => {
   }
 
   return (
-    <div>
+    <div className='PlaceOrderScreen'>
       <CheckoutSteps step1 step2 step3 step4 />
       <Row>
         <Col md={8}>

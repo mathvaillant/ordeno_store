@@ -4,6 +4,7 @@ import { Row, Col } from 'react-bootstrap'
 import Product from '../components/Product/Product'
 import Loader from '../components/Loader'
 import Message from '../components/Message/Message'
+import Footer from '../components/Footer/Footer'
 import { useDispatch, useSelector } from 'react-redux'
 import { listProducts } from '../actions/productActions'
 import Meta from '../components/Meta'
@@ -31,33 +32,45 @@ function HomeScreen({ match }) {
         ) : error ? (
           <Message variant='danger'>{error}</Message>
         ) : products.length > 1 ? (
-          <Row title='HomeScreenRow' className='HomeScreenRow'>
-            {products.map((product) => (
-              <Col
-                className='HomeScreenRow__col'
-                sm={12}
-                md={6}
-                lg={4}
-                xl={3}
-                key={product._id}>
-                <Product className='HomeScreenRow__product' product={product} />
-              </Col>
-            ))}
-          </Row>
+          <>
+            <Row title='HomeScreenRow' className='HomeScreenRow'>
+              {products.map((product) => (
+                <Col
+                  className='HomeScreenRow__col'
+                  sm={12}
+                  md={6}
+                  lg={4}
+                  xl={3}
+                  key={product._id}>
+                  <Product
+                    className='HomeScreenRow__product'
+                    product={product}
+                  />
+                </Col>
+              ))}
+            </Row>
+            <Footer />
+          </>
         ) : products.length === 1 ? (
-          <Row title='HomeScreenRow' className='HomeScreenRow'>
-            {products.map((product) => (
-              <Col
-                className='HomeScreenRow__col'
-                sm={12}
-                md={12}
-                lg={12}
-                xl={12}
-                key={product._id}>
-                <Product className='HomeScreenRow__product' product={product} />
-              </Col>
-            ))}
-          </Row>
+          <>
+            <Row title='HomeScreenRow' className='HomeScreenRow'>
+              {products.map((product) => (
+                <Col
+                  className='HomeScreenRow__col'
+                  sm={12}
+                  md={12}
+                  lg={12}
+                  xl={12}
+                  key={product._id}>
+                  <Product
+                    className='HomeScreenRow__product'
+                    product={product}
+                  />
+                </Col>
+              ))}
+            </Row>
+            <Footer />
+          </>
         ) : (
           ''
         )}

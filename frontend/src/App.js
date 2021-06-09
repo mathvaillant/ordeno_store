@@ -60,7 +60,6 @@ function App() {
             <Route path='/search/:keyword' component={HomeScreen} />
           </Container>
         </main>
-        <Footer />
       </Router>
     </>
   )
